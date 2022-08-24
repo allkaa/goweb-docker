@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c438f97b.css",
+    "main.js": "/static/js/main.6a482ef0.js",
+    "static/media/maxima.png": "/static/media/maxima.6ed48ec15d5f99a9fc46.png",
+    "static/media/blitz.svg": "/static/media/blitz.44466b5b029f27af073f15b969ea25fa.svg",
+    "static/media/maxima.svg": "/static/media/maxima.1749af95e80b687c61976d3d11ad489e.svg",
+    "static/media/loto3.png": "/static/media/loto3.40449683254f229b8007.png",
+    "static/media/keno.png": "/static/media/keno.5f5bc1bfd10f6416f165.png",
+    "static/media/super_loto.png": "/static/media/super_loto.dfcf39aef43761dfa7d6.png",
+    "static/media/photo-1-348x215.jpg": "/static/media/photo5283283956105588195-1-348x215.a333786964c7d8bc8eaf.jpg",
+    "static/media/UNL_CAPASITY_HORIZONTAL_BLUE_LARGE.8cafb623.svg": "/static/media/UNL_CAPASITY_HORIZONTAL_BLUE_LARGE.8cafb623.ea65d7c3c7655f9b8e7ca994bd4de0ca.svg",
+    "static/media/loto3.svg": "/static/media/loto3.6048a94f54f4e2abfb61dd5aad7c2a73.svg",
+    "static/media/keno.svg": "/static/media/keno.4de4906c78cc7059f5d3b087a076be16.svg",
+    "static/media/super_loto.svg": "/static/media/super_loto.a1e7cf91f4f00499bf933a2605537b5b.svg",
+    "static/media/SPEED_ICON.0db9af09.svg": "/static/media/SPEED_ICON.0db9af09.a9b91c6aa7f159c5204c0a6b124954bf.svg",
+    "static/media/home-2-16.ico": "/static/media/home-2-16.2847ec5151804559620e.ico",
+    "index.html": "/index.html",
+    "main.c438f97b.css.map": "/static/css/main.c438f97b.css.map",
+    "main.6a482ef0.js.map": "/static/js/main.6a482ef0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c438f97b.css",
+    "static/js/main.6a482ef0.js"
+  ]
+}
