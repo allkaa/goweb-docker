@@ -42,4 +42,3 @@ CMD [ "./goweb-docker" ]
 
 ##docker build -t goweb-docker .
 ##docker run -d -p 3000:8080 --name goweb-docker goweb-docker
-
