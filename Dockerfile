@@ -1,16 +1,12 @@
 # syntax=docker/dockerfile:1
 
-# golang:1.18-buster is used
-FROM golang:1.18-buster
+## Build using golang:1.18-buster
+FROM golang:1.18-buster AS build
 
-# Create build directory INSIDE the image and Set as destination for COPY
+# Create build directory INSIDE first stage image and Set as destination for COPY
 WORKDIR /app
 
-# Copy the source code into build image dir. Note the slash at the end, as explained in
-# https://docs.docker.com/engine/reference/builder/#copy
-#COPY . ./
-
-# Create production dir/subdir on image
+# Create production dir/subdir on first stage image
 RUN mkdir /unl
 RUN mkdir /unl/build
 
@@ -20,25 +16,25 @@ COPY ./build /unl/build
 # Copy golang staff to WORDIR
 COPY go.mod web.go ./
 
-# Build goweb-docker production exe on image production dir
+# Build goweb-docker production exe on first stage production dir
 RUN go build -o /unl/goweb-docker
 
-# This is for documentation purposes only.
-# To actually open the port, runtime parameters
-# must be supplied to the docker command.
-EXPOSE 8080
+## Deploy using “distroless” base image for our Go application/
+## Distroless base imageis very barebones and is meant for lean deployments of static binaries.
+FROM gcr.io/distroless/base-debian10
 
-# (Optional) environment variable that our dockerised
-# application can make use of. The value of environment
-# variables can also be set via parameters supplied
-# to the docker command on the command line.
-#ENV HTTP_PORT=8081
-
-# Change build dir to producton dir
+# Create producton dir in distroless image
 WORKDIR /unl
 
-# Run goweb-docker from production dir
-CMD [ "./goweb-docker" ]
+# Copy all from build prodiction to distroless production
+COPY --from=build /unl /unl
 
-##docker build -t goweb-docker .
-##docker run -d -p 3000:8080 --name goweb-docker goweb-docker
+EXPOSE 8080
+
+USER nonroot:nonroot
+
+# Start goweb-docker from distroless image production dir
+ENTRYPOINT ["/unl/goweb-docker"]
+
+##docker build -t goweb-docker:multistage -f Dockerfile.multistage .
+##docker run -d -p 3000:8080 --name goweb-docker goweb-docker:multistage
