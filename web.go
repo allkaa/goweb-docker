@@ -1,4 +1,4 @@
-/* // +build ignore */
+/* // +build ignore, testng repo */
 
 package main
 
