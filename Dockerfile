@@ -37,5 +37,5 @@ USER nonroot:nonroot
 # Start goweb-docker from distroless image production dir
 ENTRYPOINT ["/unl/goweb-docker"]
 
-##docker build -t goweb-docker:multistage -f Dockerfile.multistage .
+##docker build -t goweb-docker:multistage .
 ##docker run -d -p 3000:8080 --name goweb-docker goweb-docker:multistage
