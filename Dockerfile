@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 
+## Multisage dockerfile
 ## Build using golang:1.18-buster
 FROM golang:1.18-buster AS build
 
